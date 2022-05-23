@@ -56,7 +56,6 @@ print("Let's play...!!!")
 
 new_word =""
 count = 0
-count2 = 3
 
 # Create a scrambled version of the word
 while word:
@@ -69,24 +68,24 @@ print ("The team name is:", new_word)
 guess = input("\nGuess your team name: ")
 guess = guess.lower()
 
-while count < 3 and (guess != correct) and (guess != ""):
-    count += 1
+while count < 2:
 
     if guess not in correct and guess not in "":
-        count2 -=1
-        # if the character doesn’t match the word
+        count += 1
   
+        # if the character doesn’t match the word
         print("Sorry thats not the answer")
 
         # this will print the number of
         # turns left for the user
-        print("You have ",  count2 ,"guesses left")
+        print("You have ",  3 - count ,"guesses left")
         guess = input("Your guess: ")
         guess = guess.lower()
 
     if guess == correct:
         print ("Yes!, you rock!\n")
-    elif count == 3:
+        break
+    elif count == 2:
         print ("Thanks for playing, try again")
         print("The correct answer was: ", correct.upper())
  

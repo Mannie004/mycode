@@ -1,0 +1,48 @@
+<html><head>
+<title>cheatdice.py</title>
+<meta name="Generator" content="htmlizer/[Twisted, version 18.9.0]" />
+<link rel="alternate" href="cheatdice.py" type="text/x-python" />
+
+</head>
+<body>
+<pre><span class="py-src-comment">#!/usr/bin/python3</span>
+<span class="py-src-string">&quot;&quot;&quot;RZFeeser | Alta3 Research
+   Creating a simple dice program utilizing classes.&quot;&quot;&quot;</span>
+
+<span class="py-src-comment"># standard library</span>
+<span class="py-src-variable">from</span> <span class="py-src-variable">random</span> <span class="py-src-variable">import</span> <span class="py-src-variable">randint</span>
+
+<span class="py-src-variable">class</span> <span class="py-src-identifier">Player</span>:
+    <span class="py-src-variable">def</span> <span class="py-src-identifier">__init__</span>(<span class="py-src-parameter">self</span>):
+        <span class="py-src-variable">self</span>.<span class="py-src-variable">dice</span> = []
+
+    <span class="py-src-variable">def</span> <span class="py-src-identifier">roll</span>(<span class="py-src-parameter">self</span>):
+        <span class="py-src-variable">self</span>.<span class="py-src-variable">dice</span> = [] <span class="py-src-comment"># clears current dice</span>
+        <span class="py-src-variable">for</span> <span class="py-src-variable">i</span> <span class="py-src-variable">in</span> <span class="py-src-variable">range</span>(<span class="py-src-number">3</span>):  <span class="py-src-comment"># make 3 rolls</span>
+            <span class="py-src-variable">self</span>.<span class="py-src-variable">dice</span>.<span class="py-src-variable">append</span>(<span class="py-src-variable">randint</span>(<span class="py-src-number">1</span>,<span class="py-src-number">6</span>))   <span class="py-src-comment"># 1 to 6 inclusive</span>
+
+    <span class="py-src-variable">def</span> <span class="py-src-identifier">get_dice</span>(<span class="py-src-parameter">self</span>): <span class="py-src-comment"># returns the dice rolls</span>
+        <span class="py-src-variable">return</span> <span class="py-src-variable">self</span>.<span class="py-src-variable">dice</span>
+
+<span class="py-src-comment"># allows user to turn their last roll into a 6</span>
+<span class="py-src-variable">class</span> <span class="py-src-identifier">Cheat_Swapper</span>(<span class="py-src-parameter">Player</span>):  <span class="py-src-comment"># inheritance of Player</span>
+    <span class="py-src-variable">def</span> <span class="py-src-identifier">cheat</span>(<span class="py-src-parameter">self</span>):
+        <span class="py-src-variable">self</span>.<span class="py-src-variable">dice</span>[-<span class="py-src-number">1</span>] = <span class="py-src-number">6</span>
+
+<span class="py-src-variable">class</span> <span class="py-src-identifier">Cheat_roll</span>(<span class="py-src-parameter">Player</span>): <span class="py-src-comment">#inheritance of Player</span>
+    <span class="py-src-variable">def</span> <span class="py-src-identifier">cheat</span>(<span class="py-src-parameter">self</span>):
+        <span class="py-src-variable">self</span>.<span class="py-src-variable">dice</span>[<span class="py-src-number">2</span>] = <span class="py-src-number">6</span>
+
+
+<span class="py-src-comment"># allows user to increase all rolls if they were less than a 6</span>
+<span class="py-src-variable">class</span> <span class="py-src-identifier">Cheat_Loaded_Dice</span>(<span class="py-src-parameter">Player</span>): <span class="py-src-comment"># inheritance of Player</span>
+  <span class="py-src-variable">def</span> <span class="py-src-identifier">cheat</span>(<span class="py-src-parameter">self</span>):
+      <span class="py-src-variable">i</span> = <span class="py-src-number">0</span>
+      <span class="py-src-variable">while</span> <span class="py-src-variable">i</span> &lt; <span class="py-src-variable">len</span>(<span class="py-src-variable">self</span>.<span class="py-src-variable">dice</span>):
+          <span class="py-src-variable">if</span> <span class="py-src-variable">self</span>.<span class="py-src-variable">dice</span>[<span class="py-src-variable">i</span>] &lt; <span class="py-src-number">6</span>:
+              <span class="py-src-variable">self</span>.<span class="py-src-variable">dice</span>[<span class="py-src-variable">i</span>] += <span class="py-src-number">1</span>
+          <span class="py-src-variable">i</span> += <span class="py-src-number">1</span>
+
+
+</pre>
+</body>

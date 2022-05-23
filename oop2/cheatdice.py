@@ -11,7 +11,7 @@ class Player:
 
     def roll(self):
         self.dice = [] # clears current dice
-        for i in range(3):  # make 3 rolls
+        for i in range(4):  # make 3 rolls
             self.dice.append(randint(1,6))   # 1 to 6 inclusive
 
     def get_dice(self): # returns the dice rolls
@@ -22,6 +22,10 @@ class Cheat_Swapper(Player):  # inheritance of Player
     def cheat(self):
         self.dice[-1] = 6
 
+class Cheat_roll(Player): # inheritance of Player
+    def cheat(self):
+        self.dice.append(randint(1,6))
+
 # allows user to increase all rolls if they were less than a 6
 class Cheat_Loaded_Dice(Player): # inheritance of Player
   def cheat(self):
@@ -30,4 +34,5 @@ class Cheat_Loaded_Dice(Player): # inheritance of Player
           if self.dice[i] < 6:
               self.dice[i] += 1
           i += 1
+
 
