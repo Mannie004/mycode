@@ -70,7 +70,7 @@ rooms = {
                   'item' : 'potion', # added additional room
                   'weapon' : 'fireball'
             },
-             }
+         }
 
 #start the player in the Hall
 currentRoom = 'Hall'
