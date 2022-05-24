@@ -10,7 +10,7 @@ RPG Game
 Commands:
   go [direction]
   get [item]
-  take [weapon]  
+  take [weapon] 
 ''')
 #added a new move "take"
 
@@ -20,6 +20,7 @@ def showStatus():
   print('You are in the ' + currentRoom)
   #print the current inventory
   print('Inventory : ' + str(inventory))
+  # print the current weapon
   print('Weapons : ' + str(weapons))
   #print an item if there is one
   if "item" in rooms[currentRoom]:
@@ -65,9 +66,10 @@ rooms = {
                   'south' : 'Dining Room',
                   'item' : 'cookie',
             },
+            # added additional room
               'Lobby' : {
                   'west' : 'Dining Room',
-                  'item' : 'potion', # added additional room
+                  'item' : 'potion', 
                   'weapon' : 'fireball'
             },
          }
@@ -119,7 +121,7 @@ while True:
       #tell them they can't get it
       print('Can\'t get ' + move[1] + '!')
 
-       # if monster is in the room, use weapon and they type 'take' as first command
+       # if monster is in the room, use weapon and if they type 'take' as first command
   if move[0] == 'take' :
     # if the room contains an item and also contains a monster, use a weapon
        #add the item to their inventory
