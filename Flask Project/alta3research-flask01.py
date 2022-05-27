@@ -4,7 +4,7 @@ from flask_marshmallow import Marshmallow
 import os #to pinpoint where database is setup
 
 #********************************************************************************************
-# This code would require the Pipfile, Pipfile.lock, and bd.sqlite files in /mycode to run.
+# This code would require the Pipfile, Pipfile.lock, and db.sqlite files in /mycode to run.
 #*********************************************************************************************
 
 # Initialize app with flask
