@@ -3,6 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 import os #to pinpoint where database is setup
 
+#********************************************************************************************
+# This code would require the Pipfile, Pipfile.lock, and bd.sqlite files in /mycode to run.
+#*********************************************************************************************
+
 # Initialize app with flask
 app = Flask(__name__)
 
