@@ -1,5 +1,5 @@
 import requests
-import yaml
+# import yaml
 
 url = 'http://127.0.0.1:5000/product'
 def main():
@@ -8,15 +8,11 @@ def main():
     data = resp.json()
     
     # convert to YAML
-    text =  yaml.dump(data)
-    print(text)
-
-
-
-
-
-
-
+    # text =  yaml.dump(data)
+    # print(text)
+    for x in data:
+        text = f"{x['name']}\nshows that {x['description']}\nand has a price of ${x['price']}\n{x['qty']} units available\n"
+        print(text)
 
 
 
